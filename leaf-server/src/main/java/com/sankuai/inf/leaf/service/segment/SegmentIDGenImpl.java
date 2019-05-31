@@ -188,7 +188,7 @@ public class SegmentIDGenImpl implements IDGen {
                 final Segment segment = buffer.getCurrent();
                 /**
                  * 1.下一个Segment没有准备好
-                 * 2.可用segment的比例小于警界线
+                 * 2.不可用segment的比例大于警界线
                  * 3.线程没有在运行
                  */
                 if (!buffer.isNextReady() && (segment.getIdle() < 0.9 * segment.getStep())
@@ -247,7 +247,7 @@ public class SegmentIDGenImpl implements IDGen {
             }
         }
     }
-    //线程在运行则自旋，当自旋超过10000次，则每自旋休眠10ms
+    //线程在运行则自旋，当自旋超过10000次，则每次自旋休眠10ms
     private void waitAndSleep(SegmentBuffer buffer) {
         int roll = 0;
         while (buffer.getThreadRunning().get()) {

@@ -47,8 +47,8 @@
             <artifactId>spring-boot-starter-freemarker</artifactId>
             <exclusions>
                 <exclusion>
-                    <artifactId>ch.qos.logback</artifactId>
-                    <groupId>logback-classic</groupId>
+                    <artifactId>org.springframework.boot</artifactId>
+                    <groupId>spring-boot-starter</groupId>
                 </exclusion>
             </exclusions>
         </dependency>

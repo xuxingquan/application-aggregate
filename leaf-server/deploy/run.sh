@@ -13,7 +13,7 @@ for LIB_JAR in ${LIBS}
 do
     PROJ_CLASSPATH+=":${PROJ_LIB_DIR}/${LIB_JAR}"
 done
-MAIN_CLASS="com.sankuai.inf.leaf.server.LeafServerApplication"
+MAIN_CLASS="com.sankuai.inf.leaf.LeafServerApplication"
 JAVA_CMD=java
 JVM_ARGS="-server"
 
